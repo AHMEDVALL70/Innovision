@@ -9,8 +9,6 @@ function switchLanguage(lang) {
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
     });
-    
-    // يمكن إضافة ترجمة هنا لاحقاً
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -50,18 +48,24 @@ const aiToggle = document.getElementById('aiToggle');
 const aiMenu = document.getElementById('aiMenu');
 const aiResponse = document.getElementById('aiResponse');
 
+// فتح وإغلاق القائمة
 aiToggle.addEventListener('click', function(e) {
     e.stopPropagation();
     aiMenu.classList.toggle('active');
+    // إعادة تعيين الرد إلى الترحيب عند فتح القائمة
+    if (aiMenu.classList.contains('active')) {
+        aiResponse.innerHTML = '<p>👋 مرحباً! اختر أحد الخيارات أعلاه للحصول على معلومات فورية.</p>';
+    }
 });
 
+// إغلاق القائمة عند النقر خارجها
 document.addEventListener('click', function(e) {
     if (!aiMenu.contains(e.target) && !aiToggle.contains(e.target)) {
         aiMenu.classList.remove('active');
     }
 });
 
-// بيانات المساعد بالعربية فقط (للتبسيط)
+// بيانات المساعد
 const aiData = {
     experience: `👨‍💻 الخبرة المهنية:
 • مهندس دولة في الإلكترونيات والتطوير الرقمي (1992-1997)
@@ -79,10 +83,10 @@ const aiData = {
 
     projects: `📊 المشاريع البارزة:
 • PropAI: منصة التقييم العقاري الذكي
+• محسّن السيرة الذاتية ATS
+• كشف الاحتيال في الصفقات العمومية
 • نموذج التنبؤ بالسكري (دقة 85%+)
-• تحليل المشاعر (NLP) بالعربية والإنجليزية
-• التنبؤ بأسعار العملات الرقمية
-• تطوير وكلاء ذكاء اصطناعي تفاعليين`,
+• تحليل المشاعر (NLP) بالعربية والإنجليزية`,
 
     certifications: `🎓 الشهادات والتدريب:
 • Python Coder (Kaggle) - 2026
@@ -94,7 +98,7 @@ const aiData = {
 
     contact: `📧 للتواصل معي:
 • البريد الإلكتروني: ahmedvalljemaldine@gmail.com
-• الهاتف: +974 7473 6271
+• واتساب: +974 7473 6271
 • LinkedIn: linkedin.com/in/ahmed-vall-sidina
 • Bayt: people.bayt.com/ahmed-vall-sidina
 • GitHub: github.com/AHMEDVALL70`
@@ -106,11 +110,29 @@ document.querySelectorAll('.ai-menu-item').forEach(item => {
         const text = aiData[action] || '⚠️ المعلومات غير متاحة حالياً.';
         aiResponse.innerHTML = text.replace(/\n/g, '<br>');
         
+        // العودة للقائمة الرئيسية بعد 4 ثواني
         setTimeout(() => {
-            aiMenu.classList.remove('active');
-        }, 2000);
+            aiResponse.innerHTML = '<p>👋 اختر خياراً آخر من القائمة أعلاه.</p>';
+        }, 4000);
     });
 });
+
+// ===== تكوين EmailJS =====
+const EMAILJS_CONFIG = {
+    publicKey: 'Isa8uC0aRzT_viWJ4',
+    serviceID: 'service_hp0pmis',
+    templateID: 'YOUR_TEMPLATE_ID'   // 🔴 استبدل بـ Template ID الذي ستحصل عليه
+};
+
+// تهيئة EmailJS
+(function initEmailJS() {
+    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
+        emailjs.init(EMAILJS_CONFIG.publicKey);
+        console.log('✅ EmailJS initialized successfully!');
+    } else {
+        console.warn('⚠️ EmailJS not configured. Using simulation mode.');
+    }
+})();
 
 // ===== نافذة طلب الخدمة =====
 const serviceModal = document.getElementById('serviceModal');
@@ -161,19 +183,52 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
     statusDiv.textContent = 'جاري الإرسال...';
     statusDiv.className = '';
 
-    console.log('📧 طلب خدمة جديد:');
-    console.log({ name, email, phone: phoneCode + phone, service, message });
+    const sendEmail = async () => {
+        try {
+            if (typeof emailjs !== 'undefined' && 
+                EMAILJS_CONFIG.publicKey && 
+                EMAILJS_CONFIG.serviceID && 
+                EMAILJS_CONFIG.templateID &&
+                EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
+                
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    phone: phoneCode + phone,
+                    service: service,
+                    message: message,
+                    timestamp: new Date().toLocaleString('ar-EG')
+                };
+                
+                await emailjs.send(
+                    EMAILJS_CONFIG.serviceID,
+                    EMAILJS_CONFIG.templateID,
+                    templateParams
+                );
+                
+                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+                statusDiv.className = 'success';
+                document.getElementById('serviceModalForm').reset();
+                
+                setTimeout(() => {
+                    serviceModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }, 3000);
+            } else {
+                // وضع المحاكاة
+                console.log('📧 طلب خدمة جديد (محاكاة):', { name, email, phone: phoneCode + phone, service, message });
+                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! (محاكاة)';
+                statusDiv.className = 'success';
+                document.getElementById('serviceModalForm').reset();
+            }
+        } catch (error) {
+            console.error('❌ خطأ في الإرسال:', error);
+            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
+            statusDiv.className = 'error';
+        }
+    };
 
-    setTimeout(function() {
-        statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
-        statusDiv.className = 'success';
-        document.getElementById('serviceModalForm').reset();
-        
-        setTimeout(function() {
-            serviceModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }, 3000);
-    }, 1500);
+    sendEmail();
 });
 
 // ===== نموذج طلب الخدمة (في الصفحة الرئيسية) =====
@@ -197,13 +252,46 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
     statusDiv.textContent = 'جاري الإرسال...';
     statusDiv.className = '';
 
-    console.log('📧 طلب خدمة جديد:', { name, email, phone: phoneCode + phone, service, message });
+    const sendEmail = async () => {
+        try {
+            if (typeof emailjs !== 'undefined' && 
+                EMAILJS_CONFIG.publicKey && 
+                EMAILJS_CONFIG.serviceID && 
+                EMAILJS_CONFIG.templateID &&
+                EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
+                
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    phone: phoneCode + phone,
+                    service: service,
+                    message: message,
+                    timestamp: new Date().toLocaleString('ar-EG')
+                };
+                
+                await emailjs.send(
+                    EMAILJS_CONFIG.serviceID,
+                    EMAILJS_CONFIG.templateID,
+                    templateParams
+                );
+                
+                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+                statusDiv.className = 'success';
+                document.getElementById('serviceRequestForm').reset();
+            } else {
+                console.log('📧 طلب خدمة جديد (محاكاة):', { name, email, phone: phoneCode + phone, service, message });
+                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! (محاكاة)';
+                statusDiv.className = 'success';
+                document.getElementById('serviceRequestForm').reset();
+            }
+        } catch (error) {
+            console.error('❌ خطأ في الإرسال:', error);
+            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
+            statusDiv.className = 'error';
+        }
+    };
 
-    setTimeout(function() {
-        statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
-        statusDiv.className = 'success';
-        document.getElementById('serviceRequestForm').reset();
-    }, 1500);
+    sendEmail();
 });
 
 // ===== تأثير التمرير (Intersection Observer) =====
@@ -229,3 +317,4 @@ document.querySelectorAll('.service-card, .project-card, .testimonial-card, .blo
 
 console.log('🚀 Innovision 3.1 - يعمل بنجاح!');
 console.log('👨‍💻 Built with ❤️ for Ahmed Vall');
+console.log('📧 EmailJS Config:', EMAILJS_CONFIG);

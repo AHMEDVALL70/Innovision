@@ -591,6 +591,8 @@ section { padding: 80px 0; }
     border-radius: 50%;
     color: var(--secondary);
 }
+.contact-item a { transition: var(--transition); }
+.contact-item a:hover { color: #fff; }
 .social-links {
     display: flex;
     gap: 12px;
