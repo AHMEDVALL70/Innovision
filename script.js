@@ -48,60 +48,26 @@ const aiToggle = document.getElementById('aiToggle');
 const aiMenu = document.getElementById('aiMenu');
 const aiResponse = document.getElementById('aiResponse');
 
-// فتح وإغلاق القائمة
 aiToggle.addEventListener('click', function(e) {
     e.stopPropagation();
     aiMenu.classList.toggle('active');
-    // إعادة تعيين الرد إلى الترحيب عند فتح القائمة
     if (aiMenu.classList.contains('active')) {
         aiResponse.innerHTML = '<p>👋 مرحباً! اختر أحد الخيارات أعلاه للحصول على معلومات فورية.</p>';
     }
 });
 
-// إغلاق القائمة عند النقر خارجها
 document.addEventListener('click', function(e) {
     if (!aiMenu.contains(e.target) && !aiToggle.contains(e.target)) {
         aiMenu.classList.remove('active');
     }
 });
 
-// بيانات المساعد
 const aiData = {
-    experience: `👨‍💻 الخبرة المهنية:
-• مهندس دولة في الإلكترونيات والتطوير الرقمي (1992-1997)
-• مدير مركز الحالة المدنية - جدة (2019-2024)
-• مدير المصادقة على الوثائق - ANRPTS (2015-2019)
-• أكثر من 25 سنة في القطاع العام والتقني
-• خبرة في الأنظمة البيومترية والتحول الرقمي`,
-
-    missions: `🎯 المهمات الرئيسية:
-• إدارة السجل البيومتري الوطني
-• الإشراف على أنظمة الوثائق المؤمنة
-• تطوير البنية التحتية لتقنية المعلومات
-• تطبيق أطر الحوكمة وضمان الجودة
-• إدارة المشتريات العامة والعقود الدولية`,
-
-    projects: `📊 المشاريع البارزة:
-• PropAI: منصة التقييم العقاري الذكي
-• محسّن السيرة الذاتية ATS
-• كشف الاحتيال في الصفقات العمومية
-• نموذج التنبؤ بالسكري (دقة 85%+)
-• تحليل المشاعر (NLP) بالعربية والإنجليزية`,
-
-    certifications: `🎓 الشهادات والتدريب:
-• Python Coder (Kaggle) - 2026
-• Agent of Discord (Kaggle/Google) - 2026
-• Machine Learning Specialization (Stanford) - 2025
-• Deep Learning Specialization (DeepLearning.AI) - 2025
-• Python for Data Science (IBM) - 2024
-• دبلوم إدارة الأعمال الاحترافي - 2021`,
-
-    contact: `📧 للتواصل معي:
-• البريد الإلكتروني: ahmedvalljemaldine@gmail.com
-• واتساب: +974 7473 6271
-• LinkedIn: linkedin.com/in/ahmed-vall-sidina
-• Bayt: people.bayt.com/ahmed-vall-sidina
-• GitHub: github.com/AHMEDVALL70`
+    experience: `👨‍💻 الخبرة المهنية:\n• مهندس دولة في الإلكترونيات والتطوير الرقمي (1992-1997)\n• مدير مركز الحالة المدنية - جدة (2019-2024)\n• مدير المصادقة على الوثائق - ANRPTS (2015-2019)\n• أكثر من 25 سنة في القطاع العام والتقني\n• خبرة في الأنظمة البيومترية والتحول الرقمي`,
+    missions: `🎯 المهمات الرئيسية:\n• إدارة السجل البيومتري الوطني\n• الإشراف على أنظمة الوثائق المؤمنة\n• تطوير البنية التحتية لتقنية المعلومات\n• تطبيق أطر الحوكمة وضمان الجودة\n• إدارة المشتريات العامة والعقود الدولية`,
+    projects: `📊 المشاريع البارزة:\n• PropAI: منصة التقييم العقاري الذكي\n• محسّن السيرة الذاتية ATS\n• كشف الاحتيال في الصفقات العمومية\n• نموذج التنبؤ بالسكري (دقة 85%+)\n• تحليل المشاعر (NLP) بالعربية والإنجليزية`,
+    certifications: `🎓 الشهادات والتدريب:\n• Python Coder (Kaggle) - 2026\n• Agent of Discord (Kaggle/Google) - 2026\n• Machine Learning Specialization (Stanford) - 2025\n• Deep Learning Specialization (DeepLearning.AI) - 2025\n• Python for Data Science (IBM) - 2024\n• دبلوم إدارة الأعمال الاحترافي - 2021`,
+    contact: `📧 للتواصل معي:\n• البريد الإلكتروني: ahmedvalljemaldine@gmail.com\n• واتساب: +974 7473 6271\n• LinkedIn: linkedin.com/in/ahmed-vall-sidina\n• Bayt: people.bayt.com/ahmed-vall-sidina\n• GitHub: github.com/AHMEDVALL70`
 };
 
 document.querySelectorAll('.ai-menu-item').forEach(item => {
@@ -109,8 +75,6 @@ document.querySelectorAll('.ai-menu-item').forEach(item => {
         const action = this.dataset.action;
         const text = aiData[action] || '⚠️ المعلومات غير متاحة حالياً.';
         aiResponse.innerHTML = text.replace(/\n/g, '<br>');
-        
-        // العودة للقائمة الرئيسية بعد 4 ثواني
         setTimeout(() => {
             aiResponse.innerHTML = '<p>👋 اختر خياراً آخر من القائمة أعلاه.</p>';
         }, 4000);
@@ -118,19 +82,21 @@ document.querySelectorAll('.ai-menu-item').forEach(item => {
 });
 
 // ===== تكوين EmailJS =====
+// 🔴 استبدل 'YOUR_TEMPLATE_ID' بـ Template ID الخاص بك من EmailJS
 const EMAILJS_CONFIG = {
     publicKey: 'Isa8uC0aRzT_viWJ4',
     serviceID: 'service_hp0pmis',
-    templateID: 'YOUR_TEMPLATE_ID'   // 🔴 استبدل بـ Template ID الذي ستحصل عليه
+    templateID: 'YOUR_TEMPLATE_ID'   // استبدل هذا بـ Template ID
 };
 
-// تهيئة EmailJS
 (function initEmailJS() {
     if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
         emailjs.init(EMAILJS_CONFIG.publicKey);
         console.log('✅ EmailJS initialized successfully!');
+        console.log('📧 Service ID:', EMAILJS_CONFIG.serviceID);
+        console.log('📧 Template ID:', EMAILJS_CONFIG.templateID);
     } else {
-        console.warn('⚠️ EmailJS not configured. Using simulation mode.');
+        console.warn('⚠️ EmailJS library not loaded or config missing.');
     }
 })();
 
@@ -162,7 +128,7 @@ serviceModal.addEventListener('click', function(e) {
     }
 });
 
-// ===== نموذج طلب الخدمة (النافذة المنبثقة) =====
+// ===== إرسال النموذج (النافذة المنبثقة) =====
 document.getElementById('serviceModalForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -180,15 +146,20 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
         return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        statusDiv.textContent = 'الرجاء إدخال بريد إلكتروني صحيح';
+        statusDiv.className = 'error';
+        return;
+    }
+
     statusDiv.textContent = 'جاري الإرسال...';
     statusDiv.className = '';
 
     const sendEmail = async () => {
         try {
             if (typeof emailjs !== 'undefined' && 
-                EMAILJS_CONFIG.publicKey && 
-                EMAILJS_CONFIG.serviceID && 
-                EMAILJS_CONFIG.templateID &&
+                EMAILJS_CONFIG.templateID && 
                 EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
                 
                 const templateParams = {
@@ -200,12 +171,15 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
                     timestamp: new Date().toLocaleString('ar-EG')
                 };
                 
-                await emailjs.send(
+                console.log('📤 Sending email with params:', templateParams);
+                
+                const response = await emailjs.send(
                     EMAILJS_CONFIG.serviceID,
                     EMAILJS_CONFIG.templateID,
                     templateParams
                 );
                 
+                console.log('✅ Email sent successfully:', response);
                 statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
                 statusDiv.className = 'success';
                 document.getElementById('serviceModalForm').reset();
@@ -215,15 +189,13 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
                     document.body.style.overflow = 'auto';
                 }, 3000);
             } else {
-                // وضع المحاكاة
-                console.log('📧 طلب خدمة جديد (محاكاة):', { name, email, phone: phoneCode + phone, service, message });
-                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! (محاكاة)';
-                statusDiv.className = 'success';
-                document.getElementById('serviceModalForm').reset();
+                console.warn('⚠️ Using simulation mode - Template ID not set');
+                statusDiv.textContent = '⚠️ يرجى إعداد Template ID في ملف script.js';
+                statusDiv.className = 'error';
             }
         } catch (error) {
-            console.error('❌ خطأ في الإرسال:', error);
-            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
+            console.error('❌ Error sending email:', error);
+            statusDiv.textContent = '❌ حدث خطأ في الإرسال: ' + (error.text || 'حاول مرة أخرى');
             statusDiv.className = 'error';
         }
     };
@@ -231,7 +203,7 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
     sendEmail();
 });
 
-// ===== نموذج طلب الخدمة (في الصفحة الرئيسية) =====
+// ===== إرسال النموذج (الصفحة الرئيسية) =====
 document.getElementById('serviceRequestForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -249,15 +221,20 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
         return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        statusDiv.textContent = 'الرجاء إدخال بريد إلكتروني صحيح';
+        statusDiv.className = 'error';
+        return;
+    }
+
     statusDiv.textContent = 'جاري الإرسال...';
     statusDiv.className = '';
 
     const sendEmail = async () => {
         try {
             if (typeof emailjs !== 'undefined' && 
-                EMAILJS_CONFIG.publicKey && 
-                EMAILJS_CONFIG.serviceID && 
-                EMAILJS_CONFIG.templateID &&
+                EMAILJS_CONFIG.templateID && 
                 EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
                 
                 const templateParams = {
@@ -279,13 +256,11 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
                 statusDiv.className = 'success';
                 document.getElementById('serviceRequestForm').reset();
             } else {
-                console.log('📧 طلب خدمة جديد (محاكاة):', { name, email, phone: phoneCode + phone, service, message });
-                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! (محاكاة)';
-                statusDiv.className = 'success';
-                document.getElementById('serviceRequestForm').reset();
+                statusDiv.textContent = '⚠️ يرجى إعداد Template ID في ملف script.js';
+                statusDiv.className = 'error';
             }
         } catch (error) {
-            console.error('❌ خطأ في الإرسال:', error);
+            console.error('❌ Error:', error);
             statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
             statusDiv.className = 'error';
         }
@@ -294,9 +269,8 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
     sendEmail();
 });
 
-// ===== تأثير التمرير (Intersection Observer) =====
+// ===== تأثير التمرير =====
 const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
-
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, index) {
         if (entry.isIntersecting) {
