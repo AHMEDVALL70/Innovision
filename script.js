@@ -81,24 +81,8 @@ document.querySelectorAll('.ai-menu-item').forEach(item => {
     });
 });
 
-// ===== تكوين EmailJS =====
-// 🔴 استبدل 'YOUR_TEMPLATE_ID' بـ Template ID الخاص بك من EmailJS
-const EMAILJS_CONFIG = {
-    publicKey: 'Isa8uC0aRzT_viWJ4',
-    serviceID: 'service_hp0pmis',
-    templateID: 'YOUR_TEMPLATE_ID'   // استبدل هذا بـ Template ID
-};
-
-(function initEmailJS() {
-    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey) {
-        emailjs.init(EMAILJS_CONFIG.publicKey);
-        console.log('✅ EmailJS initialized successfully!');
-        console.log('📧 Service ID:', EMAILJS_CONFIG.serviceID);
-        console.log('📧 Template ID:', EMAILJS_CONFIG.templateID);
-    } else {
-        console.warn('⚠️ EmailJS library not loaded or config missing.');
-    }
-})();
+// ===== تكوين إرسال الإيميل (FormSubmit.co - مجاني) =====
+const CONTACT_EMAIL = 'ahmedvalljemaldine@gmail.com';
 
 // ===== نافذة طلب الخدمة =====
 const serviceModal = document.getElementById('serviceModal');
@@ -158,44 +142,33 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
 
     const sendEmail = async () => {
         try {
-            if (typeof emailjs !== 'undefined' && 
-                EMAILJS_CONFIG.templateID && 
-                EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
-                
-                const templateParams = {
-                    from_name: name,
-                    from_email: email,
+            const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    name, email, _replyto: email,
                     phone: phoneCode + phone,
-                    service: service,
-                    message: message,
-                    timestamp: new Date().toLocaleString('ar-EG')
-                };
-                
-                console.log('📤 Sending email with params:', templateParams);
-                
-                const response = await emailjs.send(
-                    EMAILJS_CONFIG.serviceID,
-                    EMAILJS_CONFIG.templateID,
-                    templateParams
-                );
-                
-                console.log('✅ Email sent successfully:', response);
-                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
-                statusDiv.className = 'success';
-                document.getElementById('serviceModalForm').reset();
-                
-                setTimeout(() => {
-                    serviceModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }, 3000);
-            } else {
-                console.warn('⚠️ Using simulation mode - Template ID not set');
-                statusDiv.textContent = '⚠️ يرجى إعداد Template ID في ملف script.js';
-                statusDiv.className = 'error';
-            }
+                    service, message,
+                    _subject: `طلب خدمة — ${service}`,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+
+            if (!response.ok) throw new Error('Submit failed');
+
+            console.log('✅ Email sent successfully!');
+            statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+            statusDiv.className = 'success';
+            document.getElementById('serviceModalForm').reset();
+
+            setTimeout(() => {
+                serviceModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, 3000);
         } catch (error) {
             console.error('❌ Error sending email:', error);
-            statusDiv.textContent = '❌ حدث خطأ في الإرسال: ' + (error.text || 'حاول مرة أخرى');
+            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
             statusDiv.className = 'error';
         }
     };
@@ -233,32 +206,24 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
 
     const sendEmail = async () => {
         try {
-            if (typeof emailjs !== 'undefined' && 
-                EMAILJS_CONFIG.templateID && 
-                EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID') {
-                
-                const templateParams = {
-                    from_name: name,
-                    from_email: email,
+            const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    name, email, _replyto: email,
                     phone: phoneCode + phone,
-                    service: service,
-                    message: message,
-                    timestamp: new Date().toLocaleString('ar-EG')
-                };
-                
-                await emailjs.send(
-                    EMAILJS_CONFIG.serviceID,
-                    EMAILJS_CONFIG.templateID,
-                    templateParams
-                );
-                
-                statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
-                statusDiv.className = 'success';
-                document.getElementById('serviceRequestForm').reset();
-            } else {
-                statusDiv.textContent = '⚠️ يرجى إعداد Template ID في ملف script.js';
-                statusDiv.className = 'error';
-            }
+                    service, message,
+                    _subject: `طلب خدمة — ${service}`,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+
+            if (!response.ok) throw new Error('Submit failed');
+
+            statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+            statusDiv.className = 'success';
+            document.getElementById('serviceRequestForm').reset();
         } catch (error) {
             console.error('❌ Error:', error);
             statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
@@ -291,4 +256,4 @@ document.querySelectorAll('.service-card, .project-card, .testimonial-card, .blo
 
 console.log('🚀 Innovision 3.1 - يعمل بنجاح!');
 console.log('👨‍💻 Built with ❤️ for Ahmed Vall');
-console.log('📧 EmailJS Config:', EMAILJS_CONFIG);
+console.log('📧 Contact email:', CONTACT_EMAIL);
