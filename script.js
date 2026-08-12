@@ -1,21 +1,5 @@
 // ===== تبديل اللغة =====
-let currentLang = 'ar';
-
-function switchLanguage(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-}
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        switchLanguage(this.dataset.lang);
-    });
-});
+// (تم نقل منطق الترجمة الكامل إلى ملف translations.js)
 
 // ===== القائمة المتنقلة =====
 document.getElementById('hamburger').addEventListener('click', function() {
@@ -125,19 +109,19 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
     const statusDiv = document.getElementById('modalFormStatus');
 
     if (!name || !email || !phone || !service || !message) {
-        statusDiv.textContent = 'الرجاء ملء جميع الحقول';
+        statusDiv.textContent = getCurrentTranslations()['form.msg_required'];
         statusDiv.className = 'error';
         return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        statusDiv.textContent = 'الرجاء إدخال بريد إلكتروني صحيح';
+        statusDiv.textContent = getCurrentTranslations()['form.msg_invalid_email'];
         statusDiv.className = 'error';
         return;
     }
 
-    statusDiv.textContent = 'جاري الإرسال...';
+    statusDiv.textContent = getCurrentTranslations()['form.msg_sending'];
     statusDiv.className = '';
 
     const sendEmail = async () => {
@@ -158,7 +142,7 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
             if (!response.ok) throw new Error('Submit failed');
 
             console.log('✅ Email sent successfully!');
-            statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+            statusDiv.textContent = getCurrentTranslations()['form.msg_success'];
             statusDiv.className = 'success';
             document.getElementById('serviceModalForm').reset();
 
@@ -168,7 +152,7 @@ document.getElementById('serviceModalForm').addEventListener('submit', function(
             }, 3000);
         } catch (error) {
             console.error('❌ Error sending email:', error);
-            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
+            statusDiv.textContent = getCurrentTranslations()['form.msg_error'];
             statusDiv.className = 'error';
         }
     };
@@ -189,19 +173,19 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
     const statusDiv = document.getElementById('formStatus');
 
     if (!name || !email || !phone || !service || !message) {
-        statusDiv.textContent = 'الرجاء ملء جميع الحقول';
+        statusDiv.textContent = getCurrentTranslations()['form.msg_required'];
         statusDiv.className = 'error';
         return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        statusDiv.textContent = 'الرجاء إدخال بريد إلكتروني صحيح';
+        statusDiv.textContent = getCurrentTranslations()['form.msg_invalid_email'];
         statusDiv.className = 'error';
         return;
     }
 
-    statusDiv.textContent = 'جاري الإرسال...';
+    statusDiv.textContent = getCurrentTranslations()['form.msg_sending'];
     statusDiv.className = '';
 
     const sendEmail = async () => {
@@ -221,12 +205,12 @@ document.getElementById('serviceRequestForm').addEventListener('submit', functio
 
             if (!response.ok) throw new Error('Submit failed');
 
-            statusDiv.textContent = '✅ تم إرسال طلبك بنجاح! سأتصل بك قريباً.';
+            statusDiv.textContent = getCurrentTranslations()['form.msg_success'];
             statusDiv.className = 'success';
             document.getElementById('serviceRequestForm').reset();
         } catch (error) {
             console.error('❌ Error:', error);
-            statusDiv.textContent = '❌ حدث خطأ في الإرسال. حاول مرة أخرى.';
+            statusDiv.textContent = getCurrentTranslations()['form.msg_error'];
             statusDiv.className = 'error';
         }
     };

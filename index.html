@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovision | الابتكار والتحول الرقمي</title>
+    <title id="page-title">Innovision | الابتكار والتحول الرقمي</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -17,14 +17,14 @@
                 <span>Innovision</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#casestudies">دراسات الحالة</a></li>
-                <li><a href="#projects">المشاريع</a></li>
-                <li><a href="#testimonials">آراء العملاء</a></li>
-                <li><a href="#blog">المدونة</a></li>
-                <li><a href="#cv">السيرة الذاتية</a></li>
-                <li><a href="#contact">تواصل</a></li>
+                <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+                <li><a href="#services" data-i18n="nav.services">الخدمات</a></li>
+                <li><a href="#casestudies" data-i18n="nav.casestudies">دراسات الحالة</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">المشاريع</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">آراء العملاء</a></li>
+                <li><a href="#blog" data-i18n="nav.blog">المدونة</a></li>
+                <li><a href="#cv" data-i18n="nav.cv">السيرة الذاتية</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">تواصل</a></li>
             </ul>
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="ar">عربي</button>
@@ -43,27 +43,27 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-rocket"></i>
-                    <span>الابتكار والتحول الرقمي</span>
+                    <span data-i18n="hero.badge">الابتكار والتحول الرقمي</span>
                 </div>
-                <h1>ارتقِ بأعمالك <br>باستخدام <span class="highlight">الذكاء الاصطناعي</span></h1>
-                <p>نقدم استشارات تخصصية وحلولاً برمجية متطورة في مجالات الذكاء الاصطناعي، التعلم الآلي، والأنظمة البيومترية</p>
+                <h1 data-i18n-html="hero.title">ارتقِ بأعمالك <br>باستخدام <span class="highlight">الذكاء الاصطناعي</span></h1>
+                <p data-i18n="hero.subtitle">نقدم استشارات تخصصية وحلولاً برمجية متطورة في مجالات الذكاء الاصطناعي، التعلم الآلي، والأنظمة البيومترية</p>
                 <div class="hero-stats">
                     <div class="stat">
                         <span class="stat-number">25+</span>
-                        <span class="stat-label">سنة خبرة</span>
+                        <span class="stat-label" data-i18n="hero.stat1">سنة خبرة</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">13+</span>
-                        <span class="stat-label">مشروعاً</span>
+                        <span class="stat-label" data-i18n="hero.stat2">مشروعاً</span>
                     </div>
                     <div class="stat">
                         <span class="stat-number">3</span>
-                        <span class="stat-label">لغات</span>
+                        <span class="stat-label" data-i18n="hero.stat3">لغات</span>
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="#services" class="btn btn-primary">استكشف خدماتنا</a>
-                    <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+                    <a href="#services" class="btn btn-primary" data-i18n="hero.btn_explore">استكشف خدماتنا</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="hero.btn_contact">تواصل معنا</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -79,37 +79,37 @@
                 <div class="ai-assistant" id="aiAssistant">
                     <button class="ai-toggle" id="aiToggle">
                         <i class="fas fa-robot"></i>
-                        <span>اسألني</span>
+                        <span data-i18n="ai.toggle">اسألني</span>
                     </button>
                     <div class="ai-menu" id="aiMenu">
                         <div class="ai-menu-header">
                             <i class="fas fa-microchip"></i>
-                            <span>المساعد الذكي</span>
+                            <span data-i18n="ai.header">المساعد الذكي</span>
                         </div>
                         <div class="ai-menu-items">
                             <button class="ai-menu-item" data-action="experience">
                                 <i class="fas fa-briefcase"></i>
-                                <span>الخبرة</span>
+                                <span data-i18n="ai.experience">الخبرة</span>
                             </button>
                             <button class="ai-menu-item" data-action="missions">
                                 <i class="fas fa-tasks"></i>
-                                <span>المهمات</span>
+                                <span data-i18n="ai.missions">المهمات</span>
                             </button>
                             <button class="ai-menu-item" data-action="projects">
                                 <i class="fas fa-project-diagram"></i>
-                                <span>المشاريع</span>
+                                <span data-i18n="ai.projects">المشاريع</span>
                             </button>
                             <button class="ai-menu-item" data-action="certifications">
                                 <i class="fas fa-certificate"></i>
-                                <span>الشهادات والتدريب</span>
+                                <span data-i18n="ai.certifications">الشهادات والتدريب</span>
                             </button>
                             <button class="ai-menu-item" data-action="contact">
                                 <i class="fas fa-envelope"></i>
-                                <span>اتصل بنا</span>
+                                <span data-i18n="ai.contact">اتصل بنا</span>
                             </button>
                         </div>
                         <div class="ai-response" id="aiResponse">
-                            <p>👋 مرحباً! اختر أحد الخيارات أعلاه للحصول على معلومات فورية.</p>
+                            <p data-i18n="ai.welcome">👋 مرحباً! اختر أحد الخيارات أعلاه للحصول على معلومات فورية.</p>
                         </div>
                     </div>
                 </div>
@@ -121,34 +121,34 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">ما نقدمه</span>
-                <h2>خدماتنا <span class="highlight">التخصصية</span></h2>
-                <p>حلول ذكاء اصطناعي مخصصة لاحتياجات عملك الفريدة</p>
+                <span class="section-tag" data-i18n="services.tag">ما نقدمه</span>
+                <h2 data-i18n-html="services.title">خدماتنا <span class="highlight">التخصصية</span></h2>
+                <p data-i18n="services.subtitle">حلول ذكاء اصطناعي مخصصة لاحتياجات عملك الفريدة</p>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-service="consulting">
                     <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>استشارات الذكاء الاصطناعي</h3>
-                    <p>تقييم جاهزية المؤسسة ووضع استراتيجية ذكاء اصطناعي مخصصة تحقق عائداً ملموساً</p>
-                    <button class="btn-service-request" data-service="consulting">اطلب الخدمة</button>
+                    <h3 data-i18n="services.consulting.title">استشارات الذكاء الاصطناعي</h3>
+                    <p data-i18n="services.consulting.desc">تقييم جاهزية المؤسسة ووضع استراتيجية ذكاء اصطناعي مخصصة تحقق عائداً ملموساً</p>
+                    <button class="btn-service-request" data-service="consulting" data-i18n="services.btn">اطلب الخدمة</button>
                 </div>
                 <div class="service-card" data-service="ml">
                     <div class="service-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>تطوير نماذج التعلم الآلي</h3>
-                    <p>نماذج تنبؤية مخصصة، تحليل بيانات متقدم، وأنظمة كشف احتيال ذكية</p>
-                    <button class="btn-service-request" data-service="ml">اطلب الخدمة</button>
+                    <h3 data-i18n="services.ml.title">تطوير نماذج التعلم الآلي</h3>
+                    <p data-i18n="services.ml.desc">نماذج تنبؤية مخصصة، تحليل بيانات متقدم، وأنظمة كشف احتيال ذكية</p>
+                    <button class="btn-service-request" data-service="ml" data-i18n="services.btn">اطلب الخدمة</button>
                 </div>
                 <div class="service-card" data-service="biometric">
                     <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
-                    <h3>الأنظمة البيومترية</h3>
-                    <p>حلول بصمة، وجه، وصوت مع تكامل آمن مع أنظمة الأمن والهوية القائمة</p>
-                    <button class="btn-service-request" data-service="biometric">اطلب الخدمة</button>
+                    <h3 data-i18n="services.biometric.title">الأنظمة البيومترية</h3>
+                    <p data-i18n="services.biometric.desc">حلول بصمة، وجه، وصوت مع تكامل آمن مع أنظمة الأمن والهوية القائمة</p>
+                    <button class="btn-service-request" data-service="biometric" data-i18n="services.btn">اطلب الخدمة</button>
                 </div>
                 <div class="service-card" data-service="digital">
                     <div class="service-icon"><i class="fas fa-digital-tiling"></i></div>
-                    <h3>التحول الرقمي</h3>
-                    <p>تطوير البنية التحتية الرقمية، أتمتة العمليات، وبناء قدرات الفرق التقنية</p>
-                    <button class="btn-service-request" data-service="digital">اطلب الخدمة</button>
+                    <h3 data-i18n="services.digital.title">التحول الرقمي</h3>
+                    <p data-i18n="services.digital.desc">تطوير البنية التحتية الرقمية، أتمتة العمليات، وبناء قدرات الفرق التقنية</p>
+                    <button class="btn-service-request" data-service="digital" data-i18n="services.btn">اطلب الخدمة</button>
                 </div>
             </div>
         </div>
@@ -158,46 +158,46 @@
     <section id="casestudies" class="casestudies">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">نجاحاتنا</span>
-                <h2>دراسات <span class="highlight">الحالة</span></h2>
-                <p>نماذج من مشاريعنا التي أحدثت فرقاً حقيقياً</p>
+                <span class="section-tag" data-i18n="cs.tag">نجاحاتنا</span>
+                <h2 data-i18n-html="cs.title">دراسات <span class="highlight">الحالة</span></h2>
+                <p data-i18n="cs.subtitle">نماذج من مشاريعنا التي أحدثت فرقاً حقيقياً</p>
             </div>
             <div class="casestudies-grid">
                 <div class="casestudy-card">
                     <div class="casestudy-icon"><i class="fas fa-home"></i></div>
-                    <h3>PropAI - التقييم العقاري الذكي</h3>
-                    <p>منصة متكاملة لتقييم العقارات في قطر باستخدام الذكاء الاصطناعي، تحلل أكثر من 1000 عقار وتتنبأ بالقيم العادلة بدقة عالية.</p>
+                    <h3 data-i18n="cs.propai.title">PropAI - التقييم العقاري الذكي</h3>
+                    <p data-i18n="cs.propai.desc">منصة متكاملة لتقييم العقارات في قطر باستخدام الذكاء الاصطناعي، تحلل أكثر من 1000 عقار وتتنبأ بالقيم العادلة بدقة عالية.</p>
                     <div class="casestudy-tags">
                         <span>Python</span><span>Flask</span><span>AI</span><span>Real Estate</span>
                     </div>
-                    <a href="https://ahmedvall70.github.io/AhmedVall_PropAI/" target="_blank" class="casestudy-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://ahmedvall70.github.io/AhmedVall_PropAI/" target="_blank" class="casestudy-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="casestudy-card">
                     <div class="casestudy-icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>محسّن السيرة الذاتية ATS</h3>
-                    <p>تحسين توافق السيرة الذاتية مع متطلبات أنظمة ATS باستخدام تقنيات TF-IDF ومعالجة اللغة الطبيعية.</p>
+                    <h3 data-i18n="cs.ats.title">محسّن السيرة الذاتية ATS</h3>
+                    <p data-i18n="cs.ats.desc">تحسين توافق السيرة الذاتية مع متطلبات أنظمة ATS باستخدام تقنيات TF-IDF ومعالجة اللغة الطبيعية.</p>
                     <div class="casestudy-tags">
                         <span>Python</span><span>NLP</span><span>TF-IDF</span><span>ATS</span>
                     </div>
-                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/ATS_CV_Optimizer_12.ipynb" target="_blank" class="casestudy-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/ATS_CV_Optimizer_12.ipynb" target="_blank" class="casestudy-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="casestudy-card">
                     <div class="casestudy-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>كشف الاحتيال في الصفقات</h3>
-                    <p>نموذج متخصص للكشف عن الأنماط المشبوهة في الصفقات العمومية باستخدام خوارزميات التعلم الآلي المتقدمة.</p>
+                    <h3 data-i18n="cs.fraud.title">كشف الاحتيال في الصفقات</h3>
+                    <p data-i18n="cs.fraud.desc">نموذج متخصص للكشف عن الأنماط المشبوهة في الصفقات العمومية باستخدام خوارزميات التعلم الآلي المتقدمة.</p>
                     <div class="casestudy-tags">
                         <span>Python</span><span>ML</span><span>Fraud Detection</span><span>Procurement</span>
                     </div>
-                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Procurement_Fraud_Detection_11.ipynb" target="_blank" class="casestudy-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Procurement_Fraud_Detection_11.ipynb" target="_blank" class="casestudy-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="casestudy-card">
                     <div class="casestudy-icon"><i class="fas fa-comment-dots"></i></div>
-                    <h3>تحليل المشاعر (NLP)</h3>
-                    <p>أداة متقدمة لتحليل المشاعر في النصوص العربية والإنجليزية، تستخدم الشبكات العصبية LSTM لتصنيف المشاعر بدقة عالية.</p>
+                    <h3 data-i18n="cs.sentiment.title">تحليل المشاعر (NLP)</h3>
+                    <p data-i18n="cs.sentiment.desc">أداة متقدمة لتحليل المشاعر في النصوص العربية والإنجليزية، تستخدم الشبكات العصبية LSTM لتصنيف المشاعر بدقة عالية.</p>
                     <div class="casestudy-tags">
                         <span>Python</span><span>NLP</span><span>LSTM</span><span>TensorFlow</span>
                     </div>
-                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Sentiment_Analysis_04.ipynb" target="_blank" class="casestudy-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Sentiment_Analysis_04.ipynb" target="_blank" class="casestudy-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -207,34 +207,34 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">أعمالنا</span>
-                <h2>مشاريع <span class="highlight">مميزة</span></h2>
-                <p>نماذج من الحلول التي طورناها لعملائنا</p>
+                <span class="section-tag" data-i18n="proj.tag">أعمالنا</span>
+                <h2 data-i18n-html="proj.title">مشاريع <span class="highlight">مميزة</span></h2>
+                <p data-i18n="proj.subtitle">نماذج من الحلول التي طورناها لعملائنا</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image"><i class="fas fa-home"></i></div>
                     <h3>PropAI</h3>
-                    <p>منصة تقييم عقاري ذكية تعتمد على تحليل السجلات وتوقع القيمة العادلة</p>
-                    <a href="https://ahmedvall70.github.io/AhmedVall_PropAI/" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <p data-i18n="proj.propai.desc">منصة تقييم عقاري ذكية تعتمد على تحليل السجلات وتوقع القيمة العادلة</p>
+                    <a href="https://ahmedvall70.github.io/AhmedVall_PropAI/" target="_blank" class="project-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
                     <div class="project-image"><i class="fas fa-user-circle"></i></div>
                     <h3>CV Website</h3>
-                    <p>سيرة ذاتية تفاعلية تعرض الخبرات والمشاريع بتقنيات ويب حديثة</p>
-                    <a href="https://ahmedvall70.github.io/ahmed-vall-cv/" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <p data-i18n="proj.cv.desc">سيرة ذاتية تفاعلية تعرض الخبرات والمشاريع بتقنيات ويب حديثة</p>
+                    <a href="https://ahmedvall70.github.io/ahmed-vall-cv/" target="_blank" class="project-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
                     <div class="project-image"><i class="fas fa-file-alt"></i></div>
-                    <h3>محسّن السيرة الذاتية ATS</h3>
-                    <p>تحسين توافق السيرة الذاتية مع متطلبات أنظمة ATS باستخدام TF-IDF</p>
-                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/ATS_CV_Optimizer_12.ipynb" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <h3 data-i18n="proj.ats.title">محسّن السيرة الذاتية ATS</h3>
+                    <p data-i18n="proj.ats.desc">تحسين توافق السيرة الذاتية مع متطلبات أنظمة ATS باستخدام TF-IDF</p>
+                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/ATS_CV_Optimizer_12.ipynb" target="_blank" class="project-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
                     <div class="project-image"><i class="fas fa-shield-alt"></i></div>
-                    <h3>كشف الاحتيال في الصفقات</h3>
-                    <p>نموذج متخصص للكشف عن الأنماط المشبوهة في الصفقات العمومية</p>
-                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Procurement_Fraud_Detection_11.ipynb" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-right"></i></a>
+                    <h3 data-i18n="proj.fraud.title">كشف الاحتيال في الصفقات</h3>
+                    <p data-i18n="proj.fraud.desc">نموذج متخصص للكشف عن الأنماط المشبوهة في الصفقات العمومية</p>
+                    <a href="https://github.com/AHMEDVALL70/ahmed-vall-cv/blob/main/Procurement_Fraud_Detection_11.ipynb" target="_blank" class="project-link"><span data-i18n="link.view_project">عرض المشروع</span> <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -244,33 +244,33 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">شهادات</span>
-                <h2>آراء <span class="highlight">عملائنا</span></h2>
-                <p>ما يقوله من عملنا معهم</p>
+                <span class="section-tag" data-i18n="test.tag">شهادات</span>
+                <h2 data-i18n-html="test.title">آراء <span class="highlight">عملائنا</span></h2>
+                <p data-i18n="test.subtitle">ما يقوله من عملنا معهم</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"ساعدتنا Innovision في تطوير استراتيجية ذكاء اصطناعي غيرت طريقة عملنا. النتائج كانت مذهلة في أقل من 3 أشهر."</p>
+                    <p data-i18n="test.1.quote">"ساعدتنا Innovision في تطوير استراتيجية ذكاء اصطناعي غيرت طريقة عملنا. النتائج كانت مذهلة في أقل من 3 أشهر."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div><h4>مدير تقني، شركة رائدة</h4><span>القطاع المالي</span></div>
+                        <div><h4 data-i18n="test.1.name">مدير تقني، شركة رائدة</h4><span data-i18n="test.1.role">القطاع المالي</span></div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"نظام المصادقة البيومترية الذي طورته Innovision رفع مستوى الأمان لدينا بنسبة 95% مع سهولة استخدام مذهلة."</p>
+                    <p data-i18n="test.2.quote">"نظام المصادقة البيومترية الذي طورته Innovision رفع مستوى الأمان لدينا بنسبة 95% مع سهولة استخدام مذهلة."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div><h4>مسؤول أمن المعلومات</h4><span>قطاع حكومي</span></div>
+                        <div><h4 data-i18n="test.2.name">مسؤول أمن المعلومات</h4><span data-i18n="test.2.role">قطاع حكومي</span></div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"احترافية عالية وفهم عميق لاحتياجات العمل. منصة PropAI كانت نقلة نوعية في تقييم العقارات."</p>
+                    <p data-i18n="test.3.quote">"احترافية عالية وفهم عميق لاحتياجات العمل. منصة PropAI كانت نقلة نوعية في تقييم العقارات."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
-                        <div><h4>مدير عقاري</h4><span>قطاع التطوير العقاري</span></div>
+                        <div><h4 data-i18n="test.3.name">مدير عقاري</h4><span data-i18n="test.3.role">قطاع التطوير العقاري</span></div>
                     </div>
                 </div>
             </div>
@@ -281,36 +281,36 @@
     <section id="blog" class="blog">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">مدونة</span>
-                <h2>آخر <span class="highlight">المقالات</span></h2>
-                <p>رؤى وخبرات في الذكاء الاصطناعي والتحول الرقمي</p>
+                <span class="section-tag" data-i18n="blog.tag">مدونة</span>
+                <h2 data-i18n-html="blog.title">آخر <span class="highlight">المقالات</span></h2>
+                <p data-i18n="blog.subtitle">رؤى وخبرات في الذكاء الاصطناعي والتحول الرقمي</p>
             </div>
             <div class="blog-grid">
                 <article class="blog-card">
                     <div class="blog-image"><i class="fas fa-lightbulb"></i></div>
                     <div class="blog-content">
                         <span class="blog-date">10 أغسطس 2026</span>
-                        <h3>5 علامات تدل أن عملك بحاجة للذكاء الاصطناعي</h3>
-                        <p>كيف تعرف أن الوقت قد حان لاعتماد الذكاء الاصطناعي في مؤسستك؟ نقدم لك 5 مؤشرات واضحة...</p>
-                        <a href="#" class="blog-link">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+                        <h3 data-i18n="blog.1.title">5 علامات تدل أن عملك بحاجة للذكاء الاصطناعي</h3>
+                        <p data-i18n="blog.1.desc">كيف تعرف أن الوقت قد حان لاعتماد الذكاء الاصطناعي في مؤسستك؟ نقدم لك 5 مؤشرات واضحة...</p>
+                        <a href="#" class="blog-link"><span data-i18n="link.read_more">اقرأ المزيد</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 <article class="blog-card">
                     <div class="blog-image"><i class="fas fa-brain"></i></div>
                     <div class="blog-content">
                         <span class="blog-date">25 يوليو 2026</span>
-                        <h3>الفرق بين التعلم الآلي والتعلم العميق ببساطة</h3>
-                        <p>شرح مبسط لأهم المفاهيم في عالم الذكاء الاصطناعي مع أمثلة عملية من مشاريعنا...</p>
-                        <a href="#" class="blog-link">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+                        <h3 data-i18n="blog.2.title">الفرق بين التعلم الآلي والتعلم العميق ببساطة</h3>
+                        <p data-i18n="blog.2.desc">شرح مبسط لأهم المفاهيم في عالم الذكاء الاصطناعي مع أمثلة عملية من مشاريعنا...</p>
+                        <a href="#" class="blog-link"><span data-i18n="link.read_more">اقرأ المزيد</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 <article class="blog-card">
                     <div class="blog-image"><i class="fas fa-chart-simple"></i></div>
                     <div class="blog-content">
                         <span class="blog-date">5 يوليو 2026</span>
-                        <h3>كيف تبدأ مشروع ذكاء اصطناعي في 3 أشهر</h3>
-                        <p>خطة عمل عملية لتنفيذ أول مشروع ذكاء اصطناعي في مؤسستك بخطوات واضحة ونتائج ملموسة...</p>
-                        <a href="#" class="blog-link">اقرأ المزيد <i class="fas fa-arrow-right"></i></a>
+                        <h3 data-i18n="blog.3.title">كيف تبدأ مشروع ذكاء اصطناعي في 3 أشهر</h3>
+                        <p data-i18n="blog.3.desc">خطة عمل عملية لتنفيذ أول مشروع ذكاء اصطناعي في مؤسستك بخطوات واضحة ونتائج ملموسة...</p>
+                        <a href="#" class="blog-link"><span data-i18n="link.read_more">اقرأ المزيد</span> <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -321,25 +321,25 @@
     <section id="cv" class="cv-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">خبرتي</span>
-                <h2>السيرة <span class="highlight">الذاتية</span></h2>
+                <span class="section-tag" data-i18n="cv.tag">خبرتي</span>
+                <h2 data-i18n-html="cv.title">السيرة <span class="highlight">الذاتية</span></h2>
             </div>
             <div class="cv-grid">
                 <div class="cv-summary">
-                    <h3>من أنا</h3>
-                    <p>مهندس دولة في الإلكترونيات والتطوير الرقمي مع أكثر من 25 عاماً من الخبرة القيادية في إدارة الأنظمة البيومترية، العمليات التقنية، ومبادرات التحول الرقمي في القطاع العام. يجمع بين الخبرة الإدارية والحوكمة المتقدمة مع الكفاءة التقنية في التعلم الآلي وعلوم البيانات.</p>
+                    <h3 data-i18n="cv.who">من أنا</h3>
+                    <p data-i18n="cv.summary">مهندس دولة في الإلكترونيات والتطوير الرقمي مع أكثر من 25 عاماً من الخبرة القيادية في إدارة الأنظمة البيومترية، العمليات التقنية، ومبادرات التحول الرقمي في القطاع العام. يجمع بين الخبرة الإدارية والحوكمة المتقدمة مع الكفاءة التقنية في التعلم الآلي وعلوم البيانات.</p>
                     <div class="cv-highlights">
-                        <div><i class="fas fa-check-circle"></i> هندسة دولة + 5 سنوات</div>
-                        <div><i class="fas fa-check-circle"></i> شهادات Kaggle و Stanford</div>
-                        <div><i class="fas fa-check-circle"></i> خبرة حكومية ودولية</div>
+                        <div><i class="fas fa-check-circle"></i> <span data-i18n="cv.h1">هندسة دولة + 5 سنوات</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span data-i18n="cv.h2">شهادات Kaggle و Stanford</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span data-i18n="cv.h3">خبرة حكومية ودولية</span></div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">تواصل معي</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="cv.btn_contact">تواصل معي</a>
                 </div>
                 <div class="cv-timeline">
-                    <div class="timeline-item"><span class="timeline-year">2025 - الآن</span><p>مطور Python و AI مستقل - قطر</p></div>
-                    <div class="timeline-item"><span class="timeline-year">2019 - 2024</span><p>مدير مركز الحالة المدنية - جدة</p></div>
-                    <div class="timeline-item"><span class="timeline-year">2015 - 2019</span><p>مدير المصادقة على الوثائق - ANRPTS</p></div>
-                    <div class="timeline-item"><span class="timeline-year">1992 - 1997</span><p>مهندس دولة - إلكترونيات وتطوير رقمي</p></div>
+                    <div class="timeline-item"><span class="timeline-year" data-i18n="cv.tl1.year">2025 - الآن</span><p data-i18n="cv.tl1.desc">مطور Python و AI مستقل - قطر</p></div>
+                    <div class="timeline-item"><span class="timeline-year">2019 - 2024</span><p data-i18n="cv.tl2.desc">مدير مركز الحالة المدنية - جدة</p></div>
+                    <div class="timeline-item"><span class="timeline-year">2015 - 2019</span><p data-i18n="cv.tl3.desc">مدير المصادقة على الوثائق - ANRPTS</p></div>
+                    <div class="timeline-item"><span class="timeline-year">1992 - 1997</span><p data-i18n="cv.tl4.desc">مهندس دولة - إلكترونيات وتطوير رقمي</p></div>
                 </div>
             </div>
         </div>
@@ -349,13 +349,13 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">تواصل</span>
-                <h2>هيا <span class="highlight">نتحدث</span></h2>
-                <p>لديك مشروع؟ فكرة؟ نحن هنا لمساعدتك</p>
+                <span class="section-tag" data-i18n="contact.tag">تواصل</span>
+                <h2 data-i18n-html="contact.title">هيا <span class="highlight">نتحدث</span></h2>
+                <p data-i18n="contact.subtitle">لديك مشروع؟ فكرة؟ نحن هنا لمساعدتك</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>معلومات الاتصال</h3>
+                    <h3 data-i18n="contact.info_title">معلومات الاتصال</h3>
                     <div class="contact-item"><i class="fas fa-envelope"></i><span>ahmedvalljemaldine@gmail.com</span></div>
                     <div class="contact-item">
                         <i class="fab fa-whatsapp" style="color: #25D366;"></i>
@@ -363,7 +363,7 @@
                             +974 7473 6271 (واتساب)
                         </a>
                     </div>
-                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>الدوحة، قطر</span></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="contact.location">الدوحة، قطر</span></div>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/ahmed-vall-sidina/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://people.bayt.com/ahmed-vall-sidina" target="_blank"><i class="fas fa-briefcase"></i></a>
@@ -373,21 +373,21 @@
                     </div>
                 </div>
                 <form class="contact-form" id="serviceRequestForm">
-                    <h3>طلب خدمة</h3>
-                    <p>املأ النموذج وسنرد عليك خلال 24 ساعة</p>
+                    <h3 data-i18n="form.title">طلب خدمة</h3>
+                    <p data-i18n="form.subtitle">املأ النموذج وسنرد عليك خلال 24 ساعة</p>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>الاسم الكامل</label>
-                            <input type="text" id="formName" placeholder="الاسم الكامل" required>
+                            <label data-i18n="form.name_label">الاسم الكامل</label>
+                            <input type="text" id="formName" placeholder="الاسم الكامل" data-i18n-placeholder="form.name_ph" required>
                         </div>
                         <div class="form-group">
-                            <label>البريد الإلكتروني</label>
-                            <input type="email" id="formEmail" placeholder="البريد الإلكتروني" required>
+                            <label data-i18n="form.email_label">البريد الإلكتروني</label>
+                            <input type="email" id="formEmail" placeholder="البريد الإلكتروني" data-i18n-placeholder="form.email_ph" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>رقم الهاتف</label>
+                            <label data-i18n="form.phone_label">رقم الهاتف</label>
                             <div class="phone-input">
                                 <select id="countryCode" class="country-code">
                                     <option value="+93">🇦🇫 أفغانستان</option>
@@ -462,26 +462,26 @@
                                     <option value="+84">🇻🇳 فيتنام</option>
                                     <option value="+967">🇾🇪 اليمن</option>
                                 </select>
-                                <input type="tel" id="formPhone" placeholder="رقم الهاتف" required>
+                                <input type="tel" id="formPhone" placeholder="رقم الهاتف" data-i18n-placeholder="form.phone_ph" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>الخدمة المطلوبة</label>
+                            <label data-i18n="form.service_label">الخدمة المطلوبة</label>
                             <select id="formService" required>
-                                <option value="">اختر الخدمة</option>
-                                <option value="consulting">استشارات الذكاء الاصطناعي</option>
-                                <option value="ml">تطوير نماذج التعلم الآلي</option>
-                                <option value="biometric">الأنظمة البيومترية</option>
-                                <option value="digital">التحول الرقمي</option>
-                                <option value="other">أخرى</option>
+                                <option value="" data-i18n="form.service_choose">اختر الخدمة</option>
+                                <option value="consulting" data-i18n="services.consulting.title">استشارات الذكاء الاصطناعي</option>
+                                <option value="ml" data-i18n="services.ml.title">تطوير نماذج التعلم الآلي</option>
+                                <option value="biometric" data-i18n="services.biometric.title">الأنظمة البيومترية</option>
+                                <option value="digital" data-i18n="services.digital.title">التحول الرقمي</option>
+                                <option value="other" data-i18n="form.service_other">أخرى</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>تفاصيل الطلب</label>
-                        <textarea id="formMessage" rows="4" placeholder="اكتب تفاصيل طلبك..." required></textarea>
+                        <label data-i18n="form.details_label">تفاصيل الطلب</label>
+                        <textarea id="formMessage" rows="4" placeholder="اكتب تفاصيل طلبك..." data-i18n-placeholder="form.details_ph" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="form.submit">إرسال الطلب</button>
                     <div id="formStatus"></div>
                 </form>
             </div>
@@ -495,20 +495,20 @@
                 <div class="footer-logo">
                     <i class="fas fa-microchip"></i>
                     <span>Innovision</span>
-                    <p>الابتكار والتحول الرقمي</p>
+                    <p data-i18n="hero.badge">الابتكار والتحول الرقمي</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">الرئيسية</a>
-                    <a href="#services">الخدمات</a>
-                    <a href="#casestudies">دراسات الحالة</a>
-                    <a href="#projects">المشاريع</a>
-                    <a href="#testimonials">آراء العملاء</a>
-                    <a href="#blog">المدونة</a>
-                    <a href="#cv">السيرة الذاتية</a>
-                    <a href="#contact">تواصل</a>
+                    <a href="#home" data-i18n="nav.home">الرئيسية</a>
+                    <a href="#services" data-i18n="nav.services">الخدمات</a>
+                    <a href="#casestudies" data-i18n="nav.casestudies">دراسات الحالة</a>
+                    <a href="#projects" data-i18n="nav.projects">المشاريع</a>
+                    <a href="#testimonials" data-i18n="nav.testimonials">آراء العملاء</a>
+                    <a href="#blog" data-i18n="nav.blog">المدونة</a>
+                    <a href="#cv" data-i18n="nav.cv">السيرة الذاتية</a>
+                    <a href="#contact" data-i18n="nav.contact">تواصل</a>
                 </div>
                 <div class="footer-copy">
-                    <p>&copy; 2026 Innovision. جميع الحقوق محفوظة</p>
+                    <p><span data-i18n="footer.rights">&copy; 2026 Innovision. جميع الحقوق محفوظة</span></p>
                 </div>
             </div>
         </div>
@@ -521,22 +521,22 @@
     <div class="service-modal" id="serviceModal">
         <div class="service-modal-content">
             <span class="service-modal-close" id="serviceModalClose">&times;</span>
-            <h2>طلب خدمة</h2>
-            <p>املأ النموذج وسنرد عليك خلال 24 ساعة</p>
+            <h2 data-i18n="form.title">طلب خدمة</h2>
+            <p data-i18n="form.subtitle">املأ النموذج وسنرد عليك خلال 24 ساعة</p>
             <form id="serviceModalForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>الاسم الكامل</label>
-                        <input type="text" id="modalFormName" placeholder="الاسم الكامل" required>
+                        <label data-i18n="form.name_label">الاسم الكامل</label>
+                        <input type="text" id="modalFormName" placeholder="الاسم الكامل" data-i18n-placeholder="form.name_ph" required>
                     </div>
                     <div class="form-group">
-                        <label>البريد الإلكتروني</label>
-                        <input type="email" id="modalFormEmail" placeholder="البريد الإلكتروني" required>
+                        <label data-i18n="form.email_label">البريد الإلكتروني</label>
+                        <input type="email" id="modalFormEmail" placeholder="البريد الإلكتروني" data-i18n-placeholder="form.email_ph" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label>رقم الهاتف</label>
+                        <label data-i18n="form.phone_label">رقم الهاتف</label>
                         <div class="phone-input">
                             <select id="modalCountryCode" class="country-code">
                                 <option value="+93">🇦🇫 أفغانستان</option>
@@ -611,32 +611,40 @@
                                 <option value="+84">🇻🇳 فيتنام</option>
                                 <option value="+967">🇾🇪 اليمن</option>
                             </select>
-                            <input type="tel" id="modalFormPhone" placeholder="رقم الهاتف" required>
+                            <input type="tel" id="modalFormPhone" placeholder="رقم الهاتف" data-i18n-placeholder="form.phone_ph" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>الخدمة المطلوبة</label>
+                        <label data-i18n="form.service_label">الخدمة المطلوبة</label>
                         <select id="modalFormService" required>
-                            <option value="">اختر الخدمة</option>
-                            <option value="consulting">استشارات الذكاء الاصطناعي</option>
-                            <option value="ml">تطوير نماذج التعلم الآلي</option>
-                            <option value="biometric">الأنظمة البيومترية</option>
-                            <option value="digital">التحول الرقمي</option>
-                            <option value="other">أخرى</option>
+                            <option value="" data-i18n="form.service_choose">اختر الخدمة</option>
+                            <option value="consulting" data-i18n="services.consulting.title">استشارات الذكاء الاصطناعي</option>
+                            <option value="ml" data-i18n="services.ml.title">تطوير نماذج التعلم الآلي</option>
+                            <option value="biometric" data-i18n="services.biometric.title">الأنظمة البيومترية</option>
+                            <option value="digital" data-i18n="services.digital.title">التحول الرقمي</option>
+                            <option value="other" data-i18n="form.service_other">أخرى</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>تفاصيل الطلب</label>
-                    <textarea id="modalFormMessage" rows="4" placeholder="اكتب تفاصيل طلبك..." required></textarea>
+                    <label data-i18n="form.details_label">تفاصيل الطلب</label>
+                    <textarea id="modalFormMessage" rows="4" placeholder="اكتب تفاصيل طلبك..." data-i18n-placeholder="form.details_ph" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">إرسال الطلب</button>
+                <button type="submit" class="btn btn-primary" data-i18n="form.submit">إرسال الطلب</button>
                 <div id="modalFormStatus"></div>
             </form>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- زر واتساب عائم -->
+    <a href="https://wa.me/97474736271?text=مرحباً%20أرغب%20باستشارة"
+       class="whatsapp-float"
+       target="_blank"
+       aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
