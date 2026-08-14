@@ -241,3 +241,18 @@ document.querySelectorAll('.service-card, .project-card, .testimonial-card, .blo
 console.log('🚀 Innovision 3.1 - يعمل بنجاح!');
 console.log('👨‍💻 Built with ❤️ for Ahmed Vall');
 console.log('📧 Contact email:', CONTACT_EMAIL);
+
+// ===== نسخ رقم الآيبان =====
+const paymentCopyBtn = document.getElementById('paymentCopyBtn');
+if (paymentCopyBtn) {
+    paymentCopyBtn.addEventListener('click', function () {
+        const ibanText = document.getElementById('paymentIban').textContent.trim();
+        navigator.clipboard.writeText(ibanText).then(function () {
+            const original = paymentCopyBtn.textContent;
+            paymentCopyBtn.textContent = getCurrentTranslations()['payment.copied'] || '✅';
+            setTimeout(function () {
+                paymentCopyBtn.textContent = original;
+            }, 2000);
+        });
+    });
+}

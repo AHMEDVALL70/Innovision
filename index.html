@@ -25,6 +25,7 @@
                 <li><a href="#blog" data-i18n="nav.blog">المدونة</a></li>
                 <li><a href="#cv" data-i18n="nav.cv">السيرة الذاتية</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">تواصل</a></li>
+                <li><a href="#payment" data-i18n="nav.payment">الدفع</a></li>
             </ul>
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="ar">عربي</button>
@@ -488,6 +489,41 @@
         </div>
     </section>
 
+    <!-- طرق الدفع -->
+    <section id="payment" class="payment">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="payment.tag">الدفع</span>
+                <h2 data-i18n-html="payment.title">طرق <span class="highlight">الدفع</span></h2>
+                <p data-i18n="payment.subtitle">حوّل المبلغ مباشرة إلى الحساب البنكي التالي</p>
+            </div>
+
+            <div class="payment-card">
+                <div class="payment-row">
+                    <span class="payment-label" data-i18n="payment.bank_label">اسم البنك</span>
+                    <span class="payment-value" id="paymentBankName">[اسم البنك]</span>
+                </div>
+                <div class="payment-row">
+                    <span class="payment-label" data-i18n="payment.holder_label">اسم صاحب الحساب</span>
+                    <span class="payment-value" id="paymentHolderName">[اسم صاحب الحساب]</span>
+                </div>
+                <div class="payment-row">
+                    <span class="payment-label" data-i18n="payment.account_label">رقم الحساب</span>
+                    <span class="payment-value" id="paymentAccountNumber">[رقم الحساب]</span>
+                </div>
+                <div class="payment-row payment-row-iban">
+                    <span class="payment-label" data-i18n="payment.iban_label">رقم الآيبان (IBAN)</span>
+                    <div class="payment-iban-box">
+                        <span class="payment-value" id="paymentIban">[IBAN]</span>
+                        <button type="button" class="payment-copy-btn" id="paymentCopyBtn" data-i18n="payment.copy_btn">نسخ</button>
+                    </div>
+                </div>
+
+                <p class="payment-note" data-i18n="payment.note">بعد إتمام التحويل، يرجى إرسال إيصال التحويل عبر واتساب أو البريد الإلكتروني لتأكيد الطلب.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- التذييل -->
     <footer class="footer">
         <div class="container">
@@ -506,6 +542,7 @@
                     <a href="#blog" data-i18n="nav.blog">المدونة</a>
                     <a href="#cv" data-i18n="nav.cv">السيرة الذاتية</a>
                     <a href="#contact" data-i18n="nav.contact">تواصل</a>
+                    <a href="#payment" data-i18n="nav.payment">الدفع</a>
                 </div>
                 <div class="footer-copy">
                     <p><span data-i18n="footer.rights">&copy; 2026 Innovision. جميع الحقوق محفوظة</span></p>

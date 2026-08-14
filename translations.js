@@ -11,6 +11,7 @@ const translations = {
         "nav.blog": "المدونة",
         "nav.cv": "السيرة الذاتية",
         "nav.contact": "تواصل",
+        "nav.payment": "الدفع",
 
         "hero.badge": "الابتكار والتحول الرقمي",
         "hero.title": 'ارتقِ بأعمالك <br>باستخدام <span class="highlight">الذكاء الاصطناعي</span>',
@@ -133,6 +134,17 @@ const translations = {
 
         "footer.rights": "© 2026 Innovision. جميع الحقوق محفوظة",
 
+        "payment.tag": "الدفع",
+        "payment.title": 'طرق <span class="highlight">الدفع</span>',
+        "payment.subtitle": "حوّل المبلغ مباشرة إلى الحساب البنكي التالي",
+        "payment.bank_label": "اسم البنك",
+        "payment.holder_label": "اسم صاحب الحساب",
+        "payment.account_label": "رقم الحساب",
+        "payment.iban_label": "رقم الآيبان (IBAN)",
+        "payment.copy_btn": "نسخ",
+        "payment.copied": "✅ تم النسخ",
+        "payment.note": "بعد إتمام التحويل، يرجى إرسال إيصال التحويل عبر واتساب أو البريد الإلكتروني لتأكيد الطلب.",
+
         "article.back": "العودة للمدونة",
         "article.cta_btn_1": "احجز استشارة مجانية",
         "article.cta_btn_2": "تواصل معنا للاستشارة",
@@ -200,6 +212,7 @@ const translations = {
         "nav.blog": "Blog",
         "nav.cv": "Resume",
         "nav.contact": "Contact",
+        "nav.payment": "Payment",
 
         "hero.badge": "Innovation & Digital Transformation",
         "hero.title": 'Elevate Your Business <br>with <span class="highlight">Artificial Intelligence</span>',
@@ -322,6 +335,17 @@ const translations = {
 
         "footer.rights": "© 2026 Innovision. All rights reserved",
 
+        "payment.tag": "Payment",
+        "payment.title": 'Payment <span class="highlight">Methods</span>',
+        "payment.subtitle": "Transfer the amount directly to the following bank account",
+        "payment.bank_label": "Bank Name",
+        "payment.holder_label": "Account Holder Name",
+        "payment.account_label": "Account Number",
+        "payment.iban_label": "IBAN",
+        "payment.copy_btn": "Copy",
+        "payment.copied": "✅ Copied",
+        "payment.note": "After completing the transfer, please send the transfer receipt via WhatsApp or email to confirm your request.",
+
         "article.back": "Back to Blog",
         "article.cta_btn_1": "Book a Free Consultation",
         "article.cta_btn_2": "Contact Us for Advice",
@@ -389,6 +413,7 @@ const translations = {
         "nav.blog": "Blog",
         "nav.cv": "CV",
         "nav.contact": "Contact",
+        "nav.payment": "Paiement",
 
         "hero.badge": "Innovation et Transformation Digitale",
         "hero.title": 'Élevez votre entreprise <br>grâce à <span class="highlight">l\'Intelligence Artificielle</span>',
@@ -510,6 +535,17 @@ const translations = {
         "form.msg_error": "❌ Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
 
         "footer.rights": "© 2026 Innovision. Tous droits réservés",
+
+        "payment.tag": "Paiement",
+        "payment.title": 'Moyens de <span class="highlight">Paiement</span>',
+        "payment.subtitle": "Virez le montant directement sur le compte bancaire suivant",
+        "payment.bank_label": "Nom de la Banque",
+        "payment.holder_label": "Nom du Titulaire du Compte",
+        "payment.account_label": "Numéro de Compte",
+        "payment.iban_label": "IBAN",
+        "payment.copy_btn": "Copier",
+        "payment.copied": "✅ Copié",
+        "payment.note": "Après avoir effectué le virement, veuillez envoyer le reçu par WhatsApp ou par e-mail pour confirmer votre demande.",
 
         "article.back": "Retour au Blog",
         "article.cta_btn_1": "Réserver une Consultation Gratuite",
