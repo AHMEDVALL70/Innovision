@@ -32,7 +32,7 @@
 ---
 
 ## 📁 **هيكل المشروع**
-innovision-website/
+Innovision/
 │
 ├── index.html # الصفحة الرئيسية (الهيكل الكامل)
 ├── style.css # التنسيقات والتصميم (مع تأثيرات حركية)
@@ -53,11 +53,11 @@ text
 
 1. **نسخ المستودع**:
    ```bash
-   git clone https://github.com/AHMEDVALL70/innovision-website.git
+   git clone https://github.com/AHMEDVALL70/Innovision.git
 الدخول إلى المجلد:
 
 bash
-cd innovision-website
+cd Innovision
 فتح الموقع:
 
 افتح ملف index.html مباشرة في متصفحك (双击)
@@ -84,7 +84,7 @@ git push origin main
 الموقع سيكون متاحاً على:
 
 text
-https://AHMEDVALL70.github.io/innovision-website/
+https://AHMEDVALL70.github.io/Innovision/
 🔑 تكوين EmailJS (لإرسال الطلبات)
 الخطوة 1: إنشاء حساب EmailJS
 سجل في EmailJS (مجاني)
@@ -232,9 +232,9 @@ GitHub Pages – للاستضافة المجانية
 
 ⭐ إذا أعجبك المشروع، لا تنسى منحه نجمة على GitHub! ⭐
 
-https://img.shields.io/github/stars/AHMEDVALL70/innovision-website?style=social
-https://img.shields.io/github/forks/AHMEDVALL70/innovision-website?style=social
-https://img.shields.io/github/watchers/AHMEDVALL70/innovision-website?style=social
+https://img.shields.io/github/stars/AHMEDVALL70/Innovision?style=social
+https://img.shields.io/github/forks/AHMEDVALL70/Innovision?style=social
+https://img.shields.io/github/watchers/AHMEDVALL70/Innovision?style=social
 
 شكراً لزيارتك! 🚀
 
